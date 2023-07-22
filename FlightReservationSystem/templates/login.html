@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page </title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="bg"></div>
+<!--<h3 align="center" style="color:red">{{ msg }}</h3>-->
+
+<form action="" method="post">
+
+  {% csrf_token %}
+
+  <h2 align="center">Login In</h2>
+  <h3 align="center" >{{ msg }}</h3>
+  <div class="form-field">
+    <input type="text" name="username" placeholder="Email / Username" required/>
+  </div>
+
+  <div class="form-field">
+    <input type="password" name="Password" placeholder="Password" required/>                         </div>
+
+  <div class="form-field">
+    <button class="btn" type="submit">Log in</button>
+  </div>
+  <h3 align="center" style="color:white;" > Don't have an account? <a href="{% url 'reg' %}" style="color:grey">Sign UP</a></h3>
+</form>
+<!-- partial -->
+
+</body>
+</html>

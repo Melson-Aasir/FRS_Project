@@ -1,0 +1,35 @@
+{% extends 'navbar/adminnavbar.html' %}
+{% block title %}
+Display Flights
+{% endblock %}
+
+{% block content %}
+
+<h2 align="center">Flight Lists</h2> </br>
+<table align="center" class="table">
+  <tr>
+    <th>id</th>
+    <th>FlightNumber</th>
+    <th>FlightName</th>
+    <th>Date Of Arrival</th>
+    <th>Arrival Time</th>
+    <th>Cost</th>
+    <th>ArrivalCity</th>
+    <th>DestinationCity</th>
+
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{ i.id }}</td>
+    <td>{{ i.Flight_number }}</td>
+    <td>{{ i.Flight_name }}</td>
+    <td>{{ i.Date }}</td>
+    <td>{{ i.Arrival_time }}</td>
+    <td>{{ i.Cost }}</td>
+    <td>{{ i.Arrival_city }}</td>
+    <td>{{ i.Destination_city }}</td>
+
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

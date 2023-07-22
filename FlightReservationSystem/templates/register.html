@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page </title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div id="bg"></div>
+
+<!--<h3 align="center" style="color:red" > {{ msg }} </h3>-->
+
+<form action="reg" method="post">
+
+  {% csrf_token %}
+
+  <h2 align="center">Sign Up</h2>
+  <h3 align="center" > {{ msg }} </h3>
+  <h3></h3>
+  <div class="form-field">
+    <input type="text" name="txt_username" placeholder="Username" required/>
+  </div>
+
+  <div class="form-field">
+    <input type="email" name="txt_email" placeholder="Email Id" required/>
+  </div>
+  <div class="form-field">
+    <input type="text" name="txt_phn" placeholder="Phone Number" required/>
+  </div>
+  <div class="form-field">
+    <input required="" type="text" class="form-control" placeholder="D.O.B" onfocus="(this.type='date')"/>
+  </div>
+  <div class="form-field">
+    <select name="txt_gender" required>
+      <option value="" disabled selected hidden>Gender</option>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Others</option>
+    </select>
+  </div>
+  <div class="form-field">
+    <input type="password" name="txt_pwd" placeholder="Password" required/>
+  </div>
+  <div class="form-field">
+    <button class="btn" type="submit">Register</button>
+  </div>
+  <h3 align="center" style="color:white;" > Already have an account? <a href="{% url 'log' %}" style="color:grey">Log In</a></h3>
+</form>
+<!-- partial -->
+
+</body>
+</html>
